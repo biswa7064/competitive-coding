@@ -1,6 +1,5 @@
 function sortNumericArr(numArr) {
   if (numArr.length <= 1) return numArr
-  const sortedArr = []
   for (let left = 0; left < numArr.length; left++) {
     for (let right = left + 1; right < numArr.length; right++) {
       if (numArr[left] > numArr[right]) {
@@ -8,7 +7,6 @@ function sortNumericArr(numArr) {
         numArr[left] = numArr[right]
         numArr[right] = temp
       }
-      sortedArr.push(numArr[left], numArr[right])
     }
   }
   return numArr
