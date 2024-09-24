@@ -5,7 +5,7 @@ Output - [1, 9, 2, 8, 3,7, 4, 6, 5]
 */
 const reArrangeNumbers = (numArr) => {
   const sortedNumArr = numArr.sort()
-  if (!sortedNumArr.length > 2) return sortedNumArr
+  if (sortedNumArr.length <= 2) return sortedNumArr
   const resultArr = []
   let leftItem = 0,
     rightItem = sortedNumArr.length - 1

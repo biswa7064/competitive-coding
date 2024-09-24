@@ -1,15 +1,18 @@
 function moveZeroesToEnd(numArr) {
-  if (!numArr.length > 1) return numArr
-  let count = 0
-  for (let i = 0; i < numArr.length - 1; i++) {
-    if (numArr[i] !== 0) {
-      numArr[count] = numArr[i]
-      count++
+  if (numArr.length <= 1) return numArr
+  let count = 0,
+    end = numArr.length - 1
+  while (count < end) {
+    let next = count + 1
+    while (next < end) {
+      if (numArr[count] === 0) {
+        let temp = numArr[count]
+        numArr[count] = numArr[next]
+        numArr[next] = temp
+      }
+      next++
     }
-  }
-  console.log({ count })
-  for (let i = count; i < numArr.length - 1; i++) {
-    numArr[i] = 0
+    count++
   }
   return numArr
 }
