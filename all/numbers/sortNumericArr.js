@@ -1,18 +1,13 @@
 function sortNumericArr(numArr) {
   if (numArr.length <= 1) return numArr
-  let left = 0,
-    right
-  while (left < numArr.length) {
-    right = left + 1
-    while (right < numArr.length) {
-      if (numArr[right] < numArr[left]) {
+  for (let left = 0; left < numArr.length; left++) {
+    for (let right = left + 1; right < numArr.length; right++) {
+      if (numArr[left] > numArr[right]) {
         let temp = numArr[left]
         numArr[left] = numArr[right]
         numArr[right] = temp
       }
-      right++
     }
-    left++
   }
   return numArr
 }
