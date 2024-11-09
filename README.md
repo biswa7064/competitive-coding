@@ -1,76 +1,136 @@
-JavaScript Competitive Programming Practice
-A collection of coding problems and their solutions implemented in JavaScript, organized by different data structures and algorithms.
-📁 Directory Structure
-Copy├── all/
-│ ├── arrays/ # Array-based problems and solutions
-│ ├── numbers/ # Number theory, math problems
-│ ├── strings/ # String manipulation problems
-│ └── others/ # Miscellaneous problems and solutions
-🚀 Getting Started
-Prerequisites
+# JavaScript Competitive Programming Practice
 
-Node.js (v14.0.0 or higher)
-Yarn package manager
+## Overview
 
-Installation
+Repository for practicing coding problems using JavaScript.
 
-Clone the repository
+## Directory Structure
 
-bashCopygit clone https://github.com/biswa7064/competitive-coding
+```
+├── all/
+│   ├── arrays/         # Array-based problems and solutions
+│   ├── numbers/        # Number theory, math problems
+│   ├── strings/        # String manipulation problems
+│   └── others/         # Miscellaneous problems and solutions
+```
 
-Install dependencies
+## Getting Started
 
-bashCopyyarn install
-Running Solutions
-To run any solution file, use:
-bashCopyyarn start fileName.js
+### Prerequisites
 
+- Node.js (v14.0.0 or higher)
+- Yarn package manager
+
+### Installation
+
+#### Clone Repository
+
+```bash
+git clone https://github.com/biswa7064/competitive-coding
+```
+
+#### Install Dependencies
+
+```bash
+yarn install
+```
+
+## Usage
+
+### Running Solutions
+
+```bash
+yarn start fileName.js
 # or
-
 yarn start fileName
-Example:
-bashCopyyarn start arrays/twoSum.js
-📝 File Naming Convention
+```
 
-Use camelCase for file names
-Each file should contain one primary problem solution
-Example: twoSum.js, validParentheses.js
+### Example
 
-🧩 Problem Structure
-Each solution file should follow this template:
-javascriptCopy/\*\*
+```bash
+yarn start twoSum.js
+```
 
-- Problem Name
--
-- Problem Description
--
-- Example 1:
-- Input: ...
-- Output: ...
-- ...
-  \*/
+## Structure Guide
 
-🤝 Contributing
+### File Naming Convention
 
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+- Use camelCase for file names
+- One problem per file
+- Examples: `twoSum.js`, `validParentheses.js`
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE.md file for details
-💡 Tips
+### Problem Template
 
-Read the problem carefully before solving
-Test your solution with multiple test cases
-Consider edge cases
-Focus on both correctness and efficiency
-Comment your code for better understanding
+```javascript
+/**
+ * Problem Name
+ *
+ * Problem Description
+ *
+ * Example 1:
+ * Input: ...
+ * Output: ...
+ */
+```
 
-🔍 Resources
+<!-- ## Problem Categories
 
-JavaScript MDN Documentation
-LeetCode
-HackerRank
-CodeChef
+### Arrays
+* Sorting algorithms
+* Search operations
+* Array manipulations
+* Two pointers problems
+
+### Numbers
+* Mathematical problems
+* Number theory
+* Bit manipulation
+* Basic calculations
+
+### Strings
+* String manipulation
+* Pattern matching
+* Palindromes
+* Substring problems
+
+### Others
+* Data structures
+* Graph algorithms
+* Dynamic programming
+* Miscellaneous problems -->
+
+## How to Contribute
+
+### Contribution Steps
+
+1. Fork repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m '(feat/refactor/fix): add amazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## License
+
+MIT License - See [LICENSE.md](LICENSE.md)
+
+## Best Practices
+
+### Problem Solving Tips
+
+- Read problem thoroughly
+- Test with multiple cases
+- Consider edge cases
+- Optimize solutions
+- Add comments
+
+## Resources
+
+### Documentation
+
+- [JavaScript MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Practice Platforms
+
+- [LeetCode](https://leetcode.com/)
+- [HackerRank](https://www.hackerrank.com/)
+- [CodeChef](https://www.codechef.com/)
