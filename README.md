@@ -109,9 +109,9 @@ yarn start twoSum.js
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-## License
+<!-- ## License
 
-MIT License - See [LICENSE.md](LICENSE.md)
+MIT License - See [LICENSE.md](LICENSE.md) -->
 
 ## Best Practices
 
