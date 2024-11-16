@@ -15,7 +15,7 @@ if (!fileName) {
   process.exit(1)
 }
 
-const directories = ["arrays", "numbers", "others", "strings"]
+const directories = ["arrays", "numbers", "others", "strings", "utils"]
 
 async function findAndRunFile(fileName, specificDir) {
   const baseFileName = fileName.replace(/\.(js|mjs)$/, "")
