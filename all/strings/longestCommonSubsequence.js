@@ -2,18 +2,18 @@ function longestCommonSubsequence(str1, str2) {
   const m = str1.length
   const n = str2.length
   // 2d array
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0))
-  console.log({ dp })
+  const dp = new Array(m + 1).fill().map(() => new Array(n + 1).fill(0))
   for (let i = 1; i <= m; i++) {
     for (let j = 1; j <= n; j++) {
+      // If the letters match, look diagonally to get the max subsequence before this letter and add one
       if (str1[i - 1] === str2[j - 1]) {
         dp[i][j] = dp[i - 1][j - 1] + 1
       } else {
+        // If there is no match, set the cell to the previous current longest subsequence
         dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1])
       }
     }
   }
-  console.log({ dp })
   let lcs = ""
   for (let i = m, j = n; i > 0 && j > 0; ) {
     if (str1[i - 1] === str2[j - 1]) {
@@ -26,7 +26,6 @@ function longestCommonSubsequence(str1, str2) {
       j--
     }
   }
-  console.log({ dp, m, n })
   return { length: dp[m][n], lcs: lcs }
 }
 
