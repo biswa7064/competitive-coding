@@ -88,3 +88,47 @@ console.log(
   longestSubstringWithoutRepeatingCharacters(testStr4)
 )
 console.log("using Set", longestNonRepeatedSubStringUsingSet(testStr4))
+
+// sliding window algo with plain object
+const lengthOfLongestSubstring = function (s) {
+  let hash = {}
+  let left = 0
+  let right = 0
+  let maxSubStr = ""
+
+  while (right < s.length) {
+    const char = s[right]
+
+    if (char in hash && hash[char] >= left) {
+      left = hash[char] + 1
+    }
+
+    hash[char] = right
+    const curSubStr = s.slice(left, right + 1)
+
+    if (maxSubStr.length < curSubStr.length) {
+      maxSubStr = curSubStr
+    }
+
+    right++
+  }
+
+  return maxSubStr
+}
+
+const testStrPO1 = "abcabcbb" // 'abc', maxLength=3
+const testStrPO2 = "bbbbb" // b, maxLength=1
+const testStrPO3 = "pwwkew" // 'wke', maxLength=3
+
+console.log(
+  `using plain object for ${testStrPO1}`,
+  lengthOfLongestSubstring(testStrPO1)
+)
+console.log(
+  `using plain object for ${testStrPO2}`,
+  lengthOfLongestSubstring(testStrPO2)
+)
+console.log(
+  `using plain object for ${testStrPO3}`,
+  lengthOfLongestSubstring(testStrPO3)
+)
