@@ -18,6 +18,7 @@ if (!fileName) {
 const directories = [
   "algo",
   "algo/dp",
+  "algo/two-pointer",
   "arrays",
   "numbers",
   "others",
