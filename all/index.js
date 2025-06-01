@@ -20,6 +20,7 @@ const directories = [
   "algo/dp",
   "algo/two-pointer",
   "algo/sliding-window",
+  "algo/binary-search",
   "arrays",
   "numbers",
   "others",
