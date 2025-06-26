@@ -21,6 +21,7 @@ const directories = [
   "algo/two-pointer",
   "algo/sliding-window",
   "algo/binary-search",
+  "algo/sort",
   "arrays",
   "numbers",
   "others",
