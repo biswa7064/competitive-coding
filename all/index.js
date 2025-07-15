@@ -16,12 +16,12 @@ if (!fileName) {
 }
 
 const directories = [
-  "algo",
-  "algo/dp",
-  "algo/two-pointer",
-  "algo/sliding-window",
-  "algo/binary-search",
-  "algo/sort",
+  "dsa",
+  "dsa/dp",
+  "dsa/two-pointer",
+  "dsa/sliding-window",
+  "dsa/binary-search",
+  "dsa/sort",
   "arrays",
   "numbers",
   "others",
