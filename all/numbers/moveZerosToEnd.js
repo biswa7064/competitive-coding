@@ -1,3 +1,5 @@
+// Time Complexity: O(n^2) - Nested loops over the array
+// Space Complexity: O(1) - In-place modification, no extra space used
 function moveZeroesToEnd(numArr) {
   if (numArr.length <= 1) return numArr
   let count = 0,
