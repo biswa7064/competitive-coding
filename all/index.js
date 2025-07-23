@@ -22,6 +22,7 @@ const directories = [
   "dsa/sliding-window",
   "dsa/binary-search",
   "dsa/sort",
+  "dsa/greedy",
   "arrays",
   "numbers",
   "others",
