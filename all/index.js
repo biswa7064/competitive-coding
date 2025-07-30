@@ -29,6 +29,7 @@ const directories = [
   "strings",
   "utils",
   "others/customForInBuilt",
+  "dsa/stack",
 ]
 
 async function findAndRunFile(fileName, specificDir) {
