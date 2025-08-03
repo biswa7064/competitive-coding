@@ -18,12 +18,15 @@ function removeDuplicateLetters(s) {
       start++
       continue
     }
+    // if the item is not seen, check if we can pop from the stack
+    // we can pop if the stack is not empty, the current item is smaller than the last item in the stack,
+    // and the last occurrence of the last item in the stack is after the current start index
     while (
       stack.length &&
       item < stack[stack.length - 1] &&
       start < lastFound[stack[stack.length - 1]]
     ) {
-      seen.delete(stack.pop())
+      seen.delete(stack.pop()) // remove item from seen set and stack
     }
     seen.add(item)
     stack.push(item)
