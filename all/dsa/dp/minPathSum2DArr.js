@@ -1,30 +1,24 @@
 function minPathSum(grid) {
   // length of row and column
-  const m = grid.length
-  const n = grid[0].length
-  //  create a 2d filled with 0
-  const dp = Array.from({ length: m }, () => Array(n).fill(0))
-
-  // set the starting point
-  dp[0][0] = grid[0][0]
+  const row = grid.length
+  const col = grid[0].length
 
   // fill first row
-  for (let j = 1; j < n; j++) {
-    dp[0][j] = dp[0][j - 1] + grid[0][j]
+  for (let j = 1; j < col; j++) {
+    grid[0][j] += grid[0][j - 1]
   }
   // fill the first column
-  for (let i = 1; i < m; i++) {
-    dp[i][0] = dp[i - 1][0] + grid[i][0]
+  for (let i = 1; i < row; i++) {
+    grid[i][0] += grid[i - 1][0]
   }
 
   // fill the rest of the dp array
-  for (let i = 1; i < m; i++) {
-    for (let j = 1; j < n; j++) {
-      dp[i][j] = grid[i][j] + Math.min(dp[i - 1][j], dp[i][j - 1])
+  for (let i = 1; i < row; i++) {
+    for (let j = 1; j < col; j++) {
+      grid[i][j] += Math.min(grid[i - 1][j], grid[i][j - 1])
     }
   }
-  console.log({ dp })
-  return dp[m - 1][n - 1]
+  return grid[row - 1][col - 1]
 }
 
 // Example Usage
