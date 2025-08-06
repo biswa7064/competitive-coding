@@ -1,3 +1,5 @@
+// Time Complexity: O(n) as we traverse the string once.
+// Space Complexity: O(n) as we use a stack to keep track of opening brackets
 const brackets = {
   "(": ")",
   "{": "}",
