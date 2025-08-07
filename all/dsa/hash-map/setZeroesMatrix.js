@@ -1,3 +1,5 @@
+// Time Complexity: O(m*n) for traversing the matrix twice.
+// Space Complexity: O(m+n) for storing the rows and columns that need to be zeroed.
 function setZeroes(matrix) {
   const rows = new Set()
   const cols = new Set()
