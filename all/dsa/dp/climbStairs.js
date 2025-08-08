@@ -46,13 +46,37 @@ function climbStairsMemo(n) {
   return recurseSteps(0)
 }
 
+function climbStairsTabulation(n) {
+  if (n <= 1) return 1
+  if (n === 2) return n
+  // create and array to store the number of ways to reach the top
+  const dp = new Array(n + 1).fill(0)
+  dp[0] = 1 // base case or no step do nothing
+  dp[1] = 1 // base case or only one step
+  let start = 2
+  while (start <= n) {
+    // calculate ways and update for each steps
+    dp[start] = dp[start - 1] + dp[start - 2]
+    start++
+  }
+  //   return the nth item from dp as it holds the latest count
+  return dp[n]
+}
+
 // Example Usage
 console.log(climbStairs(2)) // Output: 2 (1 step + 1 step or 2 steps)
 console.log(climbStairs(3)) // Output: 3 (1+1+1, 1+2, 2+1)
 console.log(climbStairs(4)) // Output: 5 (1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2)
 console.log(climbStairs(5)) // Output: 8 (combinations of steps to reach the top)
 // using memoize logic
+console.log("...............using memoize logic.......................")
 console.log(climbStairsMemo(2)) // Output: 2 (1 step + 1 step or 2 steps)
 console.log(climbStairsMemo(3)) // Output: 3 (1+1+1, 1+2, 2+1)
 console.log(climbStairsMemo(4)) // Output: 5 (1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2)
 console.log(climbStairsMemo(5)) // Output: 8 (combinations of steps to reach the top)
+// using tabulation logic
+console.log("...............using tabulation logic.......................")
+console.log(climbStairsTabulation(2)) // Output: 2 (1 step + 1 step or 2 steps)
+console.log(climbStairsTabulation(3)) // Output: 3 (1+1+1, 1+2, 2+1)
+console.log(climbStairsTabulation(4)) // Output: 5 (1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2)
+console.log(climbStairsTabulation(5)) // Output: 8 (combinations of steps to reach the top)
