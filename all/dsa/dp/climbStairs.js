@@ -23,8 +23,36 @@ function climbStairs(n) {
   return current
 }
 
+function climbStairsMemo(n) {
+  // base cases
+  if (n <= 1) return 1
+  if (n === 2) return n
+  //   create map to memoize
+  const memo = new Map()
+  //   recurse method to count and store every possible way to reach the top
+  function recurseSteps(steps) {
+    // if reach top return 1
+    if (steps === n) return 1
+    // if steps is overweight
+    if (steps > n) return 0
+    // recursively calculate steps(1 or 2) and store in the map
+    if (!memo.has(steps)) {
+      const ways = recurseSteps(steps + 1) + recurseSteps(steps + 2)
+      memo.set(steps, ways)
+    }
+    // once found return the calculated value
+    return memo.get(steps)
+  }
+  return recurseSteps(0)
+}
+
 // Example Usage
 console.log(climbStairs(2)) // Output: 2 (1 step + 1 step or 2 steps)
 console.log(climbStairs(3)) // Output: 3 (1+1+1, 1+2, 2+1)
 console.log(climbStairs(4)) // Output: 5 (1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2)
 console.log(climbStairs(5)) // Output: 8 (combinations of steps to reach the top)
+// using memoize logic
+console.log(climbStairsMemo(2)) // Output: 2 (1 step + 1 step or 2 steps)
+console.log(climbStairsMemo(3)) // Output: 3 (1+1+1, 1+2, 2+1)
+console.log(climbStairsMemo(4)) // Output: 5 (1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2)
+console.log(climbStairsMemo(5)) // Output: 8 (combinations of steps to reach the top)
