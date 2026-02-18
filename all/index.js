@@ -14,14 +14,14 @@ if (!fileName) {
 	console.log("Usage: node index.js fileName [directory]")
 	process.exit(1)
 }
-
+const directoriesForSort = ["dsa/sort", "dsa/sort/merge"]
 const directories = [
 	"dsa",
 	"dsa/dp",
 	"dsa/two-pointer",
 	"dsa/sliding-window",
 	"dsa/binary-search",
-	"dsa/sort",
+	...directoriesForSort,
 	"dsa/greedy",
 	"arrays",
 	"numbers",
