@@ -14,7 +14,7 @@ if (!fileName) {
 	console.log("Usage: node index.js fileName [directory]")
 	process.exit(1)
 }
-const directoriesForSort = ["dsa/sort", "dsa/sort/merge"]
+const directoriesForSort = ["dsa/sort", "dsa/sort/merge", "dsa/sort/quicksort"]
 const directories = [
 	"dsa",
 	"dsa/dp",
