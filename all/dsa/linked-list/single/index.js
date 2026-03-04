@@ -24,6 +24,21 @@ class SingleLinkedList {
 		this.size++
 		return this
 	}
+
+	pop() {
+		if (!this.head) return undefined
+		let current = this.head
+		let newTail = current
+
+		while (current.next) {
+			newTail = current
+			current = current.next
+		}
+		this.tail = newTail
+		this.tail.next = null
+		this.size--
+		return current
+	}
 }
 
 // Example Usage:
@@ -35,3 +50,6 @@ console.log(list.head.val) // Output: 1
 console.log(list.head.next.val) // Output: 2
 console.log(list.tail.val) // Output: 3
 console.log(list.size) // Output: 3
+list.pop()
+console.log(list.tail.val) // Output: 2
+console.log(list.size) // Output: 2
