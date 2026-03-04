@@ -20,6 +20,10 @@ const directoriesForSort = [
 	"dsa/sort/quicksort",
 	"dsa/sort/radix"
 ]
+const directoriesForLinkedList = [
+	"dsa/linked-list/single",
+	"dsa/linked-list/double"
+]
 const directories = [
 	"dsa",
 	"dsa/dp",
@@ -35,7 +39,8 @@ const directories = [
 	"utils",
 	"others/customForInBuilt",
 	"dsa/stack",
-	"dsa/recursion"
+	"dsa/recursion",
+	...directoriesForLinkedList
 ]
 
 async function findAndRunFile(fileName, specificDir) {
