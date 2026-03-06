@@ -62,6 +62,26 @@ class SingleLinkedList {
 		this.size++
 		return this
 	}
+	get(index) {
+		if (index < 0 || index > this.size) return null
+		let current = this.head
+		let counter = 0
+		while (counter < index) {
+			// set the current to the next node and increment the counter until we reach the index
+			current = current.next
+			counter++
+		}
+		return current
+	}
+
+	set(index, val) {
+		let foundNode = this.get(index)
+		if (foundNode) {
+			foundNode.val = val
+			return true
+		}
+		return false
+	}
 }
 
 // Example Usage:
@@ -86,3 +106,7 @@ list.unshift(10)
 console.log(list.head.val) // Output: 10
 console.log(list.size) // Output: 3
 console.log(`List is: ${JSON.stringify(list)}`) // output: List is: {"head":{"val":10,"next":{"val":5,"next":{"val":2,"next":null}}},"tail":{"val":2,"next":null},"size":3}
+
+console.log(list.get(2)) // Output: Node { val: 2, next: null }
+console.log(list.set(1, 100)) // Output: true
+console.log(list.get(1)) // Output: Node { val: 100, next: Node { val: 2, next: null } }
