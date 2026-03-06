@@ -39,6 +39,29 @@ class SingleLinkedList {
 		this.size--
 		return current
 	}
+
+	shift() {
+		if (!this.head) return undefined
+		let currentHead = this.head
+		this.head = currentHead.next
+		this.size--
+		if (this.size === 0) {
+			this.tail = null
+		}
+		return currentHead
+	}
+
+	unshift(val) {
+		let newNode = new Node(val)
+		if (!this.head) {
+			this.head = newNode
+			this.tail = this.head
+		}
+		newNode.next = this.head
+		this.head = newNode
+		this.size++
+		return this
+	}
 }
 
 // Example Usage:
@@ -53,3 +76,13 @@ console.log(list.size) // Output: 3
 list.pop()
 console.log(list.tail.val) // Output: 2
 console.log(list.size) // Output: 2
+list.shift()
+console.log(list.head.val) // Output: 2
+console.log(list.size) // Output: 1
+list.unshift(5)
+console.log(list.head.val) // Output: 5
+console.log(list.size) // Output: 2
+list.unshift(10)
+console.log(list.head.val) // Output: 10
+console.log(list.size) // Output: 3
+console.log(`List is: ${JSON.stringify(list)}`) // output: List is: {"head":{"val":10,"next":{"val":5,"next":{"val":2,"next":null}}},"tail":{"val":2,"next":null},"size":3}
