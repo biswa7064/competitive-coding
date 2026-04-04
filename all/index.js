@@ -40,6 +40,7 @@ const directories = [
 	"others/customForInBuilt",
 	"dsa/stack",
 	"dsa/recursion",
+	"dsa/queue",
 	...directoriesForLinkedList
 ]
 
