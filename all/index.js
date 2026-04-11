@@ -41,7 +41,8 @@ const directories = [
 	"dsa/stack",
 	"dsa/recursion",
 	"dsa/queue",
-	...directoriesForLinkedList
+	...directoriesForLinkedList,
+	"dsa/bst"
 ]
 
 async function findAndRunFile(fileName, specificDir) {
